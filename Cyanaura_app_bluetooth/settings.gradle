@@ -1,0 +1,2 @@
+rootProject.name='Cyanaura_java'
+include ':app'

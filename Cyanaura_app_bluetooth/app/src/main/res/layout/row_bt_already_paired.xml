@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textview_bt_paired_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BT NAME"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/textview_bt_paired_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BT ADDRESS"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/textview_bt_paired_bond_state"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BT BOND STATE"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/textview_bt_paired_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="BT TYPE"
+        android:textColor="#000000"
+        />
+
+</LinearLayout>
