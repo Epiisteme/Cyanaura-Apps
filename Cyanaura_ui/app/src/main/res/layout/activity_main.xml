@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/uid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="1388dp"
+        android:hint="Enter user id"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/uname"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:hint="User Name"
+        app:layout_constraintStart_toStartOf="@id/uid"
+        app:layout_constraintTop_toBottomOf="@id/uid" />
+
+    <EditText
+        android:id="@+id/udistrict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="36dp"
+        android:hint="District"
+        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintTop_toBottomOf="@+id/uname" />
+
+    <EditText
+        android:id="@+id/umuncipality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:hint="Muncipality"
+        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintTop_toBottomOf="@id/udistrict" />
+
+    <EditText
+        android:id="@+id/uage"
+        android:layout_width="79dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="56dp"
+        android:hint="Age"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/umuncipality"
+        app:layout_constraintTop_toBottomOf="@+id/umuncipality" />
+
+    <EditText
+        android:id="@+id/ugender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="84dp"
+        android:hint="Gender"
+        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintTop_toBottomOf="@+id/uage" />
+
+    <EditText
+        android:id="@+id/unationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:hint="Nationality"
+        app:layout_constraintStart_toStartOf="@+id/ugender"
+        app:layout_constraintTop_toBottomOf="@+id/ugender" />
+
+    <EditText
+        android:id="@+id/uresidentstate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="28dp"
+        android:hint="Resident State"
+        app:layout_constraintStart_toStartOf="@+id/unationality"
+        app:layout_constraintTop_toBottomOf="@+id/unationality" />
+
+    <EditText
+        android:id="@+id/ucurrentaddress"
+        android:layout_width="223dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="48dp"
+        android:hint="Current Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uresidentstate" />
+
+    <EditText
+        android:id="@+id/upermanentaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="52dp"
+        android:hint="Permanent Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ucurrentaddress" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+

@@ -7,9 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 
-/**
- * Created by Eduardo Flores on 3/23/15.
- */
+
 public class AlreadyPairedList extends ListActivity
 {
     @Override

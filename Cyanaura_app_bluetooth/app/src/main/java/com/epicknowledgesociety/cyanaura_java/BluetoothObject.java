@@ -4,9 +4,6 @@ import android.os.Parcel;
 import android.os.ParcelUuid;
 import android.os.Parcelable;
 
-/**
- * Created by Eduardo Flores on 3/23/15.
- */
 public class BluetoothObject implements Parcelable
 {
     private String bluetooth_name;

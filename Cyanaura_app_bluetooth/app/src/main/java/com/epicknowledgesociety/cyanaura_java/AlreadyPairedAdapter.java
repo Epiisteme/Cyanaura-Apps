@@ -10,9 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Eduardo Flores on 3/23/15.
- */
+
 public class AlreadyPairedAdapter extends ArrayAdapter<BluetoothObject>
 {
     private Context context;

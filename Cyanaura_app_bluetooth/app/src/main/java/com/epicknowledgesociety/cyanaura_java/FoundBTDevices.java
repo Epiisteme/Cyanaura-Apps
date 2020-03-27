@@ -11,9 +11,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-/**
- * Created by Eduardo Flores on 3/23/15.
- */
+
 public class FoundBTDevices extends ListActivity
 {
     private BluetoothAdapter mBluetoothAdapter;
@@ -76,14 +74,16 @@ private void displayListOfFoundDevices()
     // Register the BroadcastReceiver
     IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
     registerReceiver(mReceiver, filter);
+
 }
 
     @Override
     protected void onPause()
     {
-        super.onPause();
 
         mBluetoothAdapter.cancelDiscovery();
+        super.onPause();
+
     }
 }
 

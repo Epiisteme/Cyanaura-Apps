@@ -11,9 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/**
- * Created by Eduardo Flores on 3/23/15.
- */
+
 public class FoundBTDevicesAdapter extends ArrayAdapter<BluetoothObject>
 {
     private Context context;

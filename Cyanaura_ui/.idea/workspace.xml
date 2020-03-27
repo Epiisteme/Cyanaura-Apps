@@ -5,53 +5,52 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef8bc608-555d-4283-9d78-55bf865487f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Cyanaura/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Cyanaura/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1f800798-d97c-438a-b730-116ff6de69d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/androidTest/java/com/epicknowledgesociety/cyanaura/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/java/com/epicknowledgesociety/cyanaura/LoginActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/java/com/epicknowledgesociety/cyanaura/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/main/res/values/styles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/app/src/test/java/com/epicknowledgesociety/cyanaura/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Cyanaura/settings.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/epicknowledgesociety/cyanauraui/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/epicknowledgesociety/cyanauraui/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/epicknowledgesociety/cyanauraui/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/AlreadyPairedAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/AlreadyPairedAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/AlreadyPairedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/AlreadyPairedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/BluetoothObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/BluetoothObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/FoundBTDevices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/FoundBTDevices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/FoundBTDevicesAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/java/com/epicknowledgesociety/cyanaura_java/FoundBTDevicesAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/res/layout/row_bt_scan_new_devices.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cyanaura_app_bluetooth/app/src/main/res/layout/row_bt_scan_new_devices.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,14 +74,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ZijIR4acL0I2a6JrQqTvHQzgq8" />
+  <component name="ProjectId" id="1ZjNEjtAs63I2RPWP6ZQMV4zONz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="gradle.compiler" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -182,11 +177,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ef8bc608-555d-4283-9d78-55bf865487f9" name="Default Changelist" comment="" />
-      <created>1585328728866</created>
+      <changelist id="1f800798-d97c-438a-b730-116ff6de69d9" name="Default Changelist" comment="" />
+      <created>1585348433154</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1585328728866</updated>
+      <updated>1585348433154</updated>
     </task>
     <servers />
   </component>
@@ -195,9 +190,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
