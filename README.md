@@ -16,6 +16,11 @@ Our Project is names as Cyanaura : Cyan is the synonym for 'Blue' colour. 'Aura'
 
 ## Encrypted Maps in Inter Planetary File System
 
-## Storage of Maps in Ethereum Blockchain 
+## Storage of Encrypted Maps in Ethereum Blockchain
+Hash based Address of Patient Location in Blockchain
 
 ## Zero Knowledge Proof of Location
+Zero Knowledge Proof based Proof of Location using Zokrates
+
+## Contact Tract Trace Network Analytics
+Social Network Analytcs for Graph Database.
