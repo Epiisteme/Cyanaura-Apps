@@ -23,8 +23,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     CheckBox isInfected;
     Spinner spinner1;
-    Button symptomdate,confirmdate,statusdate,recorddate,submit1;
-    String symptomdatestr,confirmdatestr,statusdatestr,recorddatestr,infsourcestr,inforiginstr;
+    Button symptomdate,confirmdate,statusdate,submit1;
+    String symptomdatestr,confirmdatestr,statusdatestr,infsourcestr,inforiginstr;
 
     EditText infsource,inforigin;
     androidx.constraintlayout.widget.ConstraintLayout l1;
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         symptomdate=(Button)findViewById(R.id.usymptomdate);
         confirmdate=(Button)findViewById(R.id.uconfirmdate);
         statusdate=(Button)findViewById(R.id.ustatusdate);
-        recorddate=(Button)findViewById(R.id.urecordinsertdate);
+
         submit1=(Button)findViewById(R.id.submit1);
         l1=( androidx.constraintlayout.widget.ConstraintLayout)findViewById(R.id.cl1);
 
@@ -113,19 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        recorddate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog d4=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        recorddatestr=dayOfMonth+"/"+month+"/"+year;
-                    }
-                },y,0,0);
-                d4.show();
 
-            }
-        });
 
 
 

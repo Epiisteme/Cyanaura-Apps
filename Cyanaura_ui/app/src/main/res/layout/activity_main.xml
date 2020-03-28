@@ -13,26 +13,17 @@
     android:layout_height="wrap_content">
 
     <EditText
-        android:id="@+id/uid"
+        android:id="@+id/uname"
         android:layout_width="190dp"
         android:layout_height="42dp"
 
         android:layout_marginStart="80dp"
         android:layout_marginBottom="1412dp"
-        android:hint="Enter user id"
+        android:hint="Enter User Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/uname"
-        android:layout_width="190dp"
 
-        android:layout_height="42dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="36dp"
-        android:hint="User Name"
-        app:layout_constraintStart_toStartOf="@id/uid"
-        app:layout_constraintTop_toBottomOf="@id/uid" />
 
     <EditText
         android:id="@+id/udistrict"
@@ -40,7 +31,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="28dp"
         android:hint="District"
-        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintStart_toStartOf="@+id/uname"
         app:layout_constraintTop_toBottomOf="@+id/uname" />
 
     <EditText
@@ -49,7 +40,7 @@
         android:layout_height="42dp"
         android:layout_marginTop="28dp"
         android:hint="Muncipality"
-        app:layout_constraintStart_toStartOf="@+id/uid"
+        app:layout_constraintStart_toStartOf="@+id/uname"
         app:layout_constraintTop_toBottomOf="@id/udistrict" />
 
     <EditText
@@ -195,24 +186,17 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/urecordinsertdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:text="Record InsertionDate"
-        app:layout_constraintStart_toStartOf="@id/cl1"
-        app:layout_constraintTop_toBottomOf="@+id/cl1" />
 
     <Button
         android:id="@+id/submit1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/urecordinsertdate"
-        app:layout_constraintTop_toBottomOf="@+id/urecordinsertdate" />
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="@id/cl1"
+        app:layout_constraintTop_toBottomOf="@+id/cl1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
