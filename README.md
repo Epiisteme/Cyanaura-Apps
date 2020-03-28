@@ -13,6 +13,31 @@ Our Project is names as Cyanaura : Cyan is the synonym for 'Blue' colour. 'Aura'
 ## Android Application
 
 ## Bluetooth Low Energy Protocol
+Bluetooth low energy supports very short data packets (8 octet minimum up to 27 octets maximum) that are transferred at 1 Mbps. All connections use advanced sniff-subrating to achieve ultra low duty cycles.
+
+### Frequency Hopping
+Bluetooth low energy uses the adaptive frequency hopping common to all versions of Bluetooth technology to minimize interference from other technologies in the 2.4 GHz ISM Band. Efficient multi-path benefits increase the link budgets and range.
+
+### Host Control
+Bluetooth low energy places a significant amount of intelligence in the controller, which allows the host to sleep for longer periods of time and be woken up by the controller only when the host needs to perform some action. This allows for the greatest current savings since the host is assumed to consume more power than the controller.
+
+###Latency
+Bluetooth low energy can support connection setup and data transfer as low as 3ms, allowing an application to form a connection and then transfer authenticated data in few milliseconds for a short communication burst before quickly tearing down the connection.
+
+###Range
+Increased modulation index provides a possible range for Bluetooth low energy of over 100 meters.
+
+### Robustness
+Bluetooth low energy uses a strong 24 bit CRC on all packets ensuring the maximum robustness against interference.
+
+### Strong Security 
+Full AES-128 encryption using CCM to provide strong encryption and authentication of data packets.
+
+### Topology
+Bluetooth low energy uses a 32 bit access address on every packet for each slave, allowing billions of devices to be connected. The technology is optimized for one-to-one connections while allowing one-to-many connections using a star topology. With the use of quick connections and disconnections, data can move in a mesh-like topology without the complexities of maintaining a mesh network.
+
+### References
+https://developer.android.com/guide/topics/connectivity/bluetooth-le
 
 ## Encrypted Maps in Inter Planetary File System
 
