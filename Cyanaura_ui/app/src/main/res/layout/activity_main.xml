@@ -128,17 +128,92 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="60dp"
         android:hint="Infected?"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upermanentaddress" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl1"
+        android:layout_width="376dp"
+        android:layout_height="375dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/isinfected">
+
+        <Button
+            android:id="@+id/usymptomdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="312dp"
+            android:text="Set Symptoms Date"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/uconfirmdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+
+            android:text="Symptom Confirmed Date"
+            app:layout_constraintStart_toStartOf="@id/usymptomdate"
+            app:layout_constraintTop_toBottomOf="@id/usymptomdate" />
+
+        <Button
+            android:id="@+id/ustatusdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+
+            android:text="Status Date"
+            app:layout_constraintStart_toStartOf="@id/uconfirmdate"
+            app:layout_constraintTop_toBottomOf="@id/uconfirmdate" />
+
+        <EditText
+            android:id="@+id/uinfectionorigin"
+            android:layout_width="158dp"
+            android:layout_height="58dp"
+
+            android:layout_marginTop="20dp"
+            android:hint="Infection Origin"
+            app:layout_constraintStart_toStartOf="@+id/ustatusdate"
+            app:layout_constraintTop_toBottomOf="@+id/ustatusdate" />
+
+        <EditText
+            android:id="@+id/uinfectionsource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="Infection Source"
+            app:layout_constraintStart_toStartOf="@id/uinfectionorigin"
+            app:layout_constraintTop_toBottomOf="@+id/uinfectionorigin" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
+        android:id="@+id/urecordinsertdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:hint="Submit"
+        android:layout_marginStart="64dp"
+        android:text="Record InsertionDate"
+        app:layout_constraintStart_toStartOf="@id/cl1"
+        app:layout_constraintTop_toBottomOf="@+id/cl1" />
+
+    <Button
         android:id="@+id/submit1"
-        app:layout_constraintStart_toStartOf="@+id/isinfected"
-        app:layout_constraintTop_toBottomOf="@+id/isinfected" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/urecordinsertdate"
+        app:layout_constraintTop_toBottomOf="@+id/urecordinsertdate" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
