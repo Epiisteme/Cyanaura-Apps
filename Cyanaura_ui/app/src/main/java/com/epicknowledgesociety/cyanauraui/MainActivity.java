@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     CheckBox isInfected;
     Spinner spinner1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
