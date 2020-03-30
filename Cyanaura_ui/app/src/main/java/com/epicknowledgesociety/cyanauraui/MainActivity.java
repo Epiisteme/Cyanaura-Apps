@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -24,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
     CheckBox isInfected;
     Spinner spinner1;
     Button symptomdate,confirmdate,statusdate,submit1;
-    String symptomdatestr,confirmdatestr,statusdatestr,infsourcestr,inforiginstr;
+    String symptomdatestr,confirmdatestr,statusdatestr,infsourcestr,inforiginstr,unamestr,udistrictstr,umuncipalitystr,uagestr,unationalitystr,uresidentstr,ucaddressstr,upaddressstr,ugenderstr;
 
-    EditText infsource,inforigin;
+    EditText uname,udistrict,umuncipality,uage,unationality,uresident,ucaddress,upaddress,infsource,inforigin;
     androidx.constraintlayout.widget.ConstraintLayout l1;
     int y=2020;
+
 
 
     @Override
@@ -39,6 +41,26 @@ public class MainActivity extends AppCompatActivity {
 
         infsource=(EditText)findViewById(R.id.uinfectionsource);
         inforigin=(EditText)findViewById(R.id.uinfectionorigin);
+        uname=(EditText)findViewById(R.id.uname);
+        udistrict=(EditText)findViewById(R.id.udistrict);
+        umuncipality=(EditText)findViewById(R.id.umuncipality);
+        uage=(EditText)findViewById(R.id.uage);
+        unationality=(EditText)findViewById(R.id.unationality);
+        uresident=(EditText)findViewById(R.id.uresidentstate);
+        ucaddress=(EditText)findViewById(R.id.ucurrentaddress);
+        upaddress=(EditText)findViewById(R.id.upermanentaddress);
+
+
+        unamestr=uname.getText().toString();
+        udistrictstr=udistrict.getText().toString();
+        umuncipalitystr=umuncipality.getText().toString();
+        uagestr=uage.getText().toString();
+        unationalitystr=unationality.getText().toString();
+        uresidentstr=uresident.getText().toString();
+        ucaddressstr=ucaddress.getText().toString();
+        upaddressstr=upaddress.getText().toString();
+        infsourcestr=infsource.getText().toString();
+        inforiginstr=inforigin.getText().toString();
 
         symptomdate=(Button)findViewById(R.id.usymptomdate);
         confirmdate=(Button)findViewById(R.id.uconfirmdate);
@@ -128,6 +150,19 @@ public class MainActivity extends AppCompatActivity {
 
         // attaching data adapter to spinner
         spinner1.setAdapter(dataAdapter);
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ugenderstr=String.valueOf(spinner1.getSelectedItem());
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
     }
 
