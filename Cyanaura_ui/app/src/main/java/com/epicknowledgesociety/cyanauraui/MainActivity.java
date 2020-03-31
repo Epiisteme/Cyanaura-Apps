@@ -208,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
         umuncipality.getText().clear();
         uage.getText().clear();
         unationality.getText().clear();
+        
         uresident.getText().clear();
         ucaddress.getText().clear();
         upaddress.getText().clear();
@@ -227,6 +228,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this,"Data Submitted Successfully", Toast.LENGTH_LONG).show();
 
             ClearEditTextAfterDoneTask();
+            Intent intent=new Intent(MainActivity.this,Main2Activity.class);
+            startActivity(intent);
 
         }
         else {
@@ -235,5 +238,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
 
 
