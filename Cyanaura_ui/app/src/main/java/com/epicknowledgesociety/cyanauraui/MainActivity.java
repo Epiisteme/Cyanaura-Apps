@@ -4,9 +4,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +20,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,10 +30,14 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner1;
     Button symptomdate,confirmdate,statusdate,submit1;
     String symptomdatestr,confirmdatestr,statusdatestr,infsourcestr,inforiginstr,unamestr,udistrictstr,umuncipalitystr,uagestr,unationalitystr,uresidentstr,ucaddressstr,upaddressstr,ugenderstr;
+    int isinfectedint;
 
     EditText uname,udistrict,umuncipality,uage,unationality,uresident,ucaddress,upaddress,infsource,inforigin;
     androidx.constraintlayout.widget.ConstraintLayout l1;
+    SQLiteDatabase sqLiteDatabase;
     int y=2020;
+    boolean CheckEditTextEmpty;
+    String sqlitequery;
 
 
 
@@ -77,9 +85,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(l1.getVisibility()==View.GONE) {
                     l1.setVisibility(View.VISIBLE);
+                    isinfectedint=1;
+
                 }
                 else{
                    l1.setVisibility(View.GONE);
+                   isinfectedint=0;
                 }
 
    // infsourcestr=infsource.getText().toString();
@@ -154,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ugenderstr=String.valueOf(spinner1.getSelectedItem());
-
             }
 
             @Override
@@ -162,8 +172,68 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        submit1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DBCreate();
+                SubmitData2SQLiteDB();
+            }
+        });
 
 
     }
+    public void DBCreate(){
 
+        sqLiteDatabase = openOrCreateDatabase("DetailDataBase", Context.MODE_PRIVATE, null);
+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS demoTable(id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, Name VARCHAR, District VARCHAR, Muncipality VARCHAR,Age INT,Gender VARCHAR,Nationality VARCHAR,Resident_State VARCHAR,Current_Address VARCHAR,Permanent_Address VARCHAR,Is_Infected VARCHAR,Symptoms_Date VARCHAR,Symptom_Confirm_Date VARCHAR,Status_Date VARCHAR,Infection_Origin VARCHAR,Infection_Source VARCHAR);");
+    }
+
+    public void CheckEditTextIsEmptyOrNot( ){
+
+        if(TextUtils.isEmpty(unamestr) || TextUtils.isEmpty(udistrictstr) || TextUtils.isEmpty(umuncipalitystr) ||TextUtils.isEmpty(uagestr) || TextUtils.isEmpty(unationalitystr) || TextUtils.isEmpty(uresidentstr) || TextUtils.isEmpty(ucaddressstr) || TextUtils.isEmpty(upaddressstr)) {
+
+
+            CheckEditTextEmpty = false ;
+
+        }
+        else {
+            CheckEditTextEmpty = true ;
+        }
+    }
+    public void ClearEditTextAfterDoneTask(){
+
+        uname.getText().clear();
+        udistrict.getText().clear();
+        umuncipality.getText().clear();
+        uage.getText().clear();
+        unationality.getText().clear();
+        uresident.getText().clear();
+        ucaddress.getText().clear();
+        upaddress.getText().clear();
+
+    }
+
+    public void SubmitData2SQLiteDB(){
+        CheckEditTextIsEmptyOrNot();
+
+        if(CheckEditTextEmpty == false)
+        {
+
+            sqlitequery = "INSERT INTO demoTable (Name,District,Muncipality,Age,Gender,Nationality,Resident_State,Current_Address,Permanent_Address,Is_Infected,Symptoms_Date,Symptom_Confirm_Date,Status_Date,Infection_Origin,Infection_Source) VALUES('"+unamestr+"', '"+udistrictstr+"', '"+umuncipalitystr+"','"+uagestr+"','"+ugenderstr+"','"+unationalitystr+"','"+uresidentstr+"','"+ucaddressstr+"','"+upaddressstr+"','"+isinfectedint+"','"+symptomdatestr+"','"+confirmdatestr+"','"+statusdatestr+"','"+inforiginstr+"','"+infsourcestr+"');";
+
+            sqLiteDatabase.execSQL(sqlitequery);
+
+            Toast.makeText(MainActivity.this,"Data Submitted Successfully", Toast.LENGTH_LONG).show();
+
+            ClearEditTextAfterDoneTask();
+
+        }
+        else {
+
+            Toast.makeText(MainActivity.this,"Please Fill All the Fields", Toast.LENGTH_LONG).show();
+        }
+    }
 }
+
+
