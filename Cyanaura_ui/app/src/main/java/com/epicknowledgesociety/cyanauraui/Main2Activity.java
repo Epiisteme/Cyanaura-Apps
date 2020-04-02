@@ -1,8 +1,11 @@
 package com.epicknowledgesociety.cyanauraui;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
@@ -21,7 +24,8 @@ public class Main2Activity extends AppCompatActivity {
     NotificationManager manager;
     Intent resultIntent;
     TaskStackBuilder stackBuilder;
-    public static final String NOTIFICATION_CHANNEL_ID ="Cyanaura";
+    private NotificationManager notifManager;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,41 +34,73 @@ public class Main2Activity extends AppCompatActivity {
         Start = (Button)findViewById(R.id.start);
         Start.setOnClickListener(new View.OnClickListener() {
 
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View arg0) {
                 // TODO Auto-generated method stub
 
-                startNotification();
+               createNotification("New alert",getApplicationContext());
 
             }
 
-            protected void startNotification() {
-                // TODO Auto-generated method stub
-                //Creating Notification Builder
+            @RequiresApi(api = Build.VERSION_CODES.O)
 
-                notification = new NotificationCompat.Builder(Main2Activity.this,NOTIFICATION_CHANNEL_ID);
-                notification.setSmallIcon(R.drawable.download);
-                //Title for Notification
-                notification.setContentTitle("Learn2Crack Updates");
-                //Message in the Notification
-                notification.setContentText("New Post on Android Notification.");
-                //Alert shown when Notification is received
-                notification.setTicker("New Message Alert!");
-                //Icon to be set on Notification
 
-                //Creating new Stack Builder
-                stackBuilder = TaskStackBuilder.create(Main2Activity.this);
-                stackBuilder.addParentStack(Result.class);
-                //Intent which is opened when notification is clicked
-                resultIntent = new Intent(Main2Activity.this, Result.class);
-                stackBuilder.addNextIntent(resultIntent);
-                pIntent =  stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
-                notification.setContentIntent(pIntent);
-                manager =(NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                manager.notify(0, notification.build());
+
+                public void createNotification(String aMessage, Context context) {
+                    final int NOTIFY_ID = 0; // ID of notification
+                    String id = "channel1"; // default_channel_id
+                    String title ="cyanaura"; // Default Channel
+                    Intent intent;
+                    PendingIntent pendingIntent;
+                    NotificationCompat.Builder builder;
+                    if (notifManager == null) {
+                        notifManager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        int importance = NotificationManager.IMPORTANCE_HIGH;
+                        NotificationChannel mChannel = notifManager.getNotificationChannel(id);
+                        if (mChannel == null) {
+                            mChannel = new NotificationChannel(id, title, importance);
+                            mChannel.enableVibration(true);
+                            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                            notifManager.createNotificationChannel(mChannel);
+                        }
+                        builder = new NotificationCompat.Builder(context, id);
+                        intent = new Intent(context, Result.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+                        builder.setContentTitle(aMessage)                            // required
+                                .setSmallIcon(android.R.drawable.ic_popup_reminder)   // required
+                                .setContentText(context.getString(R.string.app_name)) // required
+                                .setDefaults(Notification.DEFAULT_ALL)
+                                .setAutoCancel(true)
+                                .setContentIntent(pendingIntent)
+                                .setTicker(aMessage)
+                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                    }
+                    else {
+                        builder = new NotificationCompat.Builder(context, id);
+                        intent = new Intent(context, Result.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
+                        builder.setContentTitle(aMessage)                            // required
+                                .setSmallIcon(android.R.drawable.ic_popup_reminder)   // required
+                                .setContentText(context.getString(R.string.app_name)) // required
+                                .setDefaults(Notification.DEFAULT_ALL)
+                                .setAutoCancel(true)
+                                .setContentIntent(pendingIntent)
+                                .setTicker(aMessage)
+                                .setVibrate(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400})
+                                .setPriority(Notification.PRIORITY_HIGH);
+                    }
+                    Notification notification = builder.build();
+                    notifManager.notify(NOTIFY_ID, notification);
+                }
+
       //          Toast.makeText(Main2Activity.this, "reached the end", Toast.LENGTH_SHORT).show();
 
-            }
+
         });
     }
 
