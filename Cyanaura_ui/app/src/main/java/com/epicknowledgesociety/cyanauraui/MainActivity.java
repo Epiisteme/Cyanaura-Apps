@@ -44,12 +44,7 @@ public class MainActivity extends AppCompatActivity {
     int y = 2020;
     boolean CheckEditTextEmpty;
     String sqlitequery;
-    NotificationCompat.Builder notification;
-    PendingIntent pIntent;
-    NotificationManager manager;
-    Intent resultIntent;
-    TaskStackBuilder stackBuilder;
-    public static final String NOTIFICATION_CHANNEL_ID ="Cyanaura";
+
 
 
     @Override
@@ -184,8 +179,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 DBCreate();
                 SubmitData2SQLiteDB();
-                startNotification();
+
             }
+
 
         });
 
@@ -238,8 +234,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Data Submitted Successfully", Toast.LENGTH_LONG).show();
 
             ClearEditTextAfterDoneTask();
-//            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+            startActivity(intent);
 
         } else {
 
@@ -248,30 +244,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    protected void startNotification() {
-        // TODO Auto-generated method stub
-        //Creating Notification Builder
-        notification = new NotificationCompat.Builder(MainActivity.this, NOTIFICATION_CHANNEL_ID);
-        //Title for Notification
-        notification.setContentTitle("Learn2Crack Updates");
-        //Message in the Notification
-        notification.setContentText("New Post on Android Notification.");
-        //Alert shown when Notification is received
-        notification.setTicker("New Message Alert!");
-        //Icon to be set on Notification
-        notification.setSmallIcon(R.drawable.ic_launcher_background);
-        //Creating new Stack Builder
-                stackBuilder = TaskStackBuilder.create(MainActivity.this);
-                stackBuilder.addParentStack(Result.class);
-                //Intent which is opened when notification is clicked
-                resultIntent = new Intent(MainActivity.this, Result.class);
-                stackBuilder.addNextIntent(resultIntent);
-                pIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-                notification.setContentIntent(pIntent);
-                manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-                manager.notify(0, notification.build());
 
-    }
 
 
 }
