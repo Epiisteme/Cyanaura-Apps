@@ -25,7 +25,7 @@ public class Main2Activity extends AppCompatActivity {
     Intent resultIntent;
     TaskStackBuilder stackBuilder;
     private NotificationManager notifManager;
-   
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

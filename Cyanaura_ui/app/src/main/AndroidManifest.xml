@@ -28,6 +28,9 @@
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".Main2Activity" />
+
     </application>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
 </manifest>
