@@ -3,6 +3,8 @@ package com.epicknowledgesociety.cyanauraui;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
+import app.akexorcist.bluetotohspp.library.BluetoothSPP;
+import app.akexorcist.bluetotohspp.library.BluetoothState;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -11,11 +13,18 @@ import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main2Activity extends AppCompatActivity {
     Button Start;
@@ -25,6 +34,12 @@ public class Main2Activity extends AppCompatActivity {
     Intent resultIntent;
     TaskStackBuilder stackBuilder;
     private NotificationManager notifManager;
+    Button bt1;
+    ArrayList<String> detval=new ArrayList<String>();
+
+    ListView dataListView;
+
+
 
 
     @Override
@@ -32,6 +47,31 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Start = (Button)findViewById(R.id.start);
+        bt1=(Button)findViewById(R.id.bt1);
+        dataListView = (ListView) findViewById(R.id.listview);
+       final ArrayAdapter<String> itemsAdapter =
+                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, detval){
+                    @Override
+                    public View getView(int position, View convertView, ViewGroup parent){
+
+                        // Get the current item from ListView
+                        View view = super.getView(position,convertView,parent);
+                        if(position%8>=4)
+                        {
+                            // Set a background color for ListView regular row/item
+                            view.setBackgroundColor(Color.parseColor("#FFB6B546"));
+
+                        }
+                        else
+                        {
+                            // Set the background color for alternate row/item
+                            view.setBackgroundColor(Color.parseColor("#00FFFF"));
+
+                        }
+                        return view;
+                    }
+                };
+
         Start.setOnClickListener(new View.OnClickListener() {
 
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -101,6 +141,47 @@ public class Main2Activity extends AppCompatActivity {
       //          Toast.makeText(Main2Activity.this, "reached the end", Toast.LENGTH_SHORT).show();
 
 
+        });
+
+
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BluetoothSPP bt = new BluetoothSPP(getApplicationContext());
+                if(!bt.isBluetoothAvailable()) {
+                    // any command for bluetooth is not available
+                    Toast.makeText(Main2Activity.this, "Bluetooth Not available for this device", Toast.LENGTH_SHORT).show();
+                }
+                if(!bt.isBluetoothEnabled()) {
+                    // Do somthing if bluetooth is disable
+                    Toast.makeText(Main2Activity.this, "Bluetooth Not enabled for this device", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    // Do something if bluetooth is already enable
+                    Toast.makeText(Main2Activity.this, "Bluetooth  on for this device", Toast.LENGTH_SHORT).show();
+                    bt.startService(BluetoothState.DEVICE_ANDROID);
+                    bt.autoConnect("");
+                    bt.setAutoConnectionListener(new BluetoothSPP.AutoConnectionListener() {
+                        public void onNewConnection(String name, String address) {
+                            detval.add("Name:"+name);
+                            detval.add("Address:"+address);
+
+                            dataListView.setAdapter(itemsAdapter);
+                            // Do something when searching for new connection device
+
+
+                        }
+
+                        public void onAutoConnectionStarted() {
+                            // Do something when auto connection has started
+                            Toast.makeText(Main2Activity.this, "Autoconnection started", Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+
+                }
+
+            }
         });
     }
 
