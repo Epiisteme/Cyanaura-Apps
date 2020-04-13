@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IPFS Demo</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/latest/css/ol.css" type="text/css">
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div>
+      <div style = "height: 410px"></div>
+    <button id="export-png">Upload PNG to IPFS</button>
+    <button id="get-png" style="display: none">Get PNG from IPFS</button>
+    <br />
+    <a id="image-download" download="map.png"></a>
+    <img class="uploadPreview" id ="uploadPreview" src ="">
+    </div>
+    <script src="./bundle.js"></script>
+  </body>
+</html>
+
