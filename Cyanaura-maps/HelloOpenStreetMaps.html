@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+    </head>
+    <body>
+        <div style="width: 100vw; height: 100vh" id="map"></div>
+
+
+
+        <script type="text/javascript">
+
+            const map = new L.Map('map', {
+                center: new L.LatLng(10.8505159,76.2710833),
+                zoom: 14,
+                maxZoom: 18
+            });
+            const osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+            map.addLayer(osm);
+
+
+            let geojsonFeatureCollection = {
+                "type": "FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "name": "Adam's Apple Bowthorpe",
+                      "amenity": "Fruit Store",
+                      "popupContent": `<h1>Gokul B Alex</h1>
+                        <p>Landmark World<br />
+                            Calicut<br />
+                            Kerala<br />
+                            India />
+                        </p>`
+                      },
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [10.8505159,76.2710833]
+                      }
+                    }
+                  ]
+                };
+
+                L.geoJSON(geojsonFeatureCollection, {
+                  onEachFeature: onEachFeature
+                }).addTo(map);
+
+                function onEachFeature(feature, layer) {
+                  if (feature.properties && feature.properties.popupContent) {
+                    layer.bindPopup(feature.properties.popupContent);
+                  }
+                }
+
+        </script>
+
+
+
+    </body>
+</html>
