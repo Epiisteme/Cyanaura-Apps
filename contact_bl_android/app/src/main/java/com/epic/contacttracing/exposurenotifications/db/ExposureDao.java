@@ -2,17 +2,22 @@ package com.epic.contacttracing.exposurenotifications.db;
 import com.google.android.gms.nearby.exposurenotification.ExposureWindow;
 
 import androidx.room.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CompletableFuture;
+
 @Dao
 abstract class ExposureDao {
 
     @Query("SELECT * FROM ExposureEntity ORDER BY date_millis_since_epoch DESC")
-    abstract  MutableList<ExposureEntity>  getAll() ;
+    abstract ArrayList<ExposureEntity> getAll() ;
 
     @Query("SELECT * FROM ExposureEntity ORDER BY date_millis_since_epoch DESC")
-    abstract Flow<List<ExposureEntity>> getAllLive();
+    abstract CompletableFuture<List<ExposureEntity>> getAllLive();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract  void upsertAsync( List<ExposureEntity?> entities);
+    abstract  void upsertAsync( List<ExposureEntity> entities);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract void upsert(ExposureEntity entity);
