@@ -1,0 +1,2 @@
+include ':app', ':arch'
+rootProject.name = "ContactTracing"
