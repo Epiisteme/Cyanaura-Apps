@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -14,6 +15,7 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private int REQUEST_ENABLE_BT = 99; // Any positive integer should work.
     private BluetoothAdapter mBluetoothAdapter;
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
-
     private Button button_enableBT;
     private Button button_displayPairedBT;
     private Button button_scanBT;
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     1);
         }
 
+
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         button_enableBT = (Button) findViewById(R.id.button_enableBT);
@@ -69,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 enableBluetoothOnDevice();
+                Intent discoverableIntent =
+                        new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+                discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 0);
+                startActivity(discoverableIntent);
             }
         });
 
